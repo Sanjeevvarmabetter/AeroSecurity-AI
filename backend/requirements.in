@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+sqlalchemy>=2
+alembic
+psycopg[binary]
+geoalchemy2
+httpx
+defusedxml
+reportlab

@@ -1,0 +1,22 @@
+[tool.ruff]
+extend-exclude = ["migrations/versions"]
+line-length = 110
+target-version = "py312"
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S", "SIM"]
+[tool.ruff.lint.per-file-ignores]
+"app/detection/rules/*" = ["E501"]
+"app/intelligence/prompts.py" = ["E501"]  # prompt prose is kept as written
+"app/intelligence/tools.py" = ["E501"]  # one-line tool registry entries
+"app/reports/*" = ["E501"]  # dense report assembly tables  # dense evidence payloads read better unwrapped
+"tests/*" = ["S101", "S105", "S106", "S608", "E501", "F811"]  # F811: pytest fixtures imported by name
+[tool.mypy]
+strict = true
+plugins = ["pydantic.mypy"]
+exclude = ["migrations"]
+[[tool.mypy.overrides]]
+module = ["geoalchemy2.*", "defusedxml.*", "reportlab.*"]
+ignore_missing_imports = true
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: requires a PostGIS database (DATABASE_URL)"]
