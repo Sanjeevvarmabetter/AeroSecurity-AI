@@ -225,9 +225,9 @@ node_modules/
 # Downloaded datasets (fetch with scripts/fetch_datasets.py)
 datasets/raw/*
 !datasets/raw/.gitkeep
-e2e/screenshots
-test-results
-playwright-report
+frontend/e2e/screenshots/
+frontend/test-results/
+frontend/playwright-report/
 
 # macOS
 .DS_Store

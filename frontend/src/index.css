@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #070c14;
+  --color-panel: #0d1524;
+  --color-subpanel: #121e33;
+  --color-line: #1e2f4d;
+  --color-muted: #7e8da6;
+  --color-accent: #38bdf8;
+  --color-accent-subtle: rgba(56, 189, 248, 0.15);
+  --color-sev-critical: #ef4444;
+  --color-sev-high: #f97316;
+  --color-sev-medium: #eab308;
+  --color-sev-low: #38bdf8;
+  --color-ok: #22c55e;
+}
+
+body {
+  @apply bg-ink text-slate-200 antialiased selection:bg-accent/30 selection:text-white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Precision scrollbar for enterprise density */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070c14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2f4d;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
